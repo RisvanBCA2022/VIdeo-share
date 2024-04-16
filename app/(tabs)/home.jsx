@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList, Image, RefreshControl, Alert } from "react-native";
+import { View, Text, SafeAreaView, FlatList, Image, RefreshControl } from "react-native";
 import React, { useEffect, useState } from "react";
 import { images } from "../../constants";
 import SearchInput from "../../components/SearchInput";
@@ -21,7 +21,6 @@ const onRefresh = async ()=>{
   await refetch()
   setRefreshing(false)
 }
-console.log(posts);
 
   return (
     <SafeAreaView className="bg-primary h-full">
