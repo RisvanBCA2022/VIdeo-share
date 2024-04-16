@@ -8,7 +8,6 @@ const VideoCard = ({
     title,
     thumbnail,
     video,
-    creator,
     users: { username, avatar },
   },
 }) => {

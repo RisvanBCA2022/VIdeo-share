@@ -9,7 +9,7 @@ import { createUser } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
-  const {user,setUser,setIsLoggedIn}=useGlobalContext()
+  const {user,setUser,setIsLogged}=useGlobalContext()
   const [form, setForm] = useState({
     username:"",
     email: "",
@@ -26,7 +26,7 @@ const SignUp = () => {
     try {
       const result=await createUser(form.email,form.password,form.username)
       setUser(result)
-      setIsLoggedIn(true)
+      setIsLogged(true)
       router.replace('/home')
     } catch (error) {
       Alert.alert('Error',error.message)
@@ -79,8 +79,8 @@ const SignUp = () => {
             <Text className="text-lg text-gray-100 font-pregular"> 
               Have an account already?
             </Text>
-            <Link href="/sign-up" className="text-lg font-psemibold text-secondary-100">
-            Sign Up
+            <Link href="/sign-in" className="text-lg font-psemibold text-secondary-100">
+            Sign In
             </Link>
 
            </View>
